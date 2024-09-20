@@ -9,17 +9,33 @@ console.log(loggedIn);
 
 //use darkLyout 
 definePageMeta({
-    layout: 'darklayout'
+    layout: 'darklayout',
 })
 </script>
 
 
 <template>
-    <div>
-        <button v-if="!loggedIn" @click="handleSignIn">Log In</button>
-        <button @click="handleSignOut">Log Out</button>
+    <div class="container">
+        <div>LOGO</div>
+        <div>
+            <button v-if="loggedIn" @click="handleSignOut">Log Out</button>
+            <a v-else href="/login">Accedi</a>
+        </div>
     </div>
-    <pre>
-        {{ data }}
-    </pre>
 </template>
+
+<style>
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+</style>

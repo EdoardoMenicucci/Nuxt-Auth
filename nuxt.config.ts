@@ -5,6 +5,6 @@ export default defineNuxtConfig({
   modules: ['@sidebase/nuxt-auth'],
   auth: {
     origin: 'http://localhost:3000', // Cambia l'URL se necessario
-    enableGlobalAppMiddleware: true,
+    // globalAppMiddleware: true
   }
 })

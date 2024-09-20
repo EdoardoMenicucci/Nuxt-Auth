@@ -12,5 +12,6 @@
 body {
   background-color: #333;
   color: white;
+  font-family: sans-serif;
 }
 </style>
