@@ -1,26 +1,29 @@
 <script setup lang="ts">
 import { useAuthActions } from '~/composables/useAuthActions'
 
-const { loggedIn, handleSignIn, handleSignOut, data } = useAuthActions()
+const { signIn, signOut, status, getCsrfToken, getSession } = useAuth()
 
-// console.log(data);
-console.log(loggedIn);
+const { loggedIn } = useAuthActions()
 
 
 //use darkLyout 
 definePageMeta({
     layout: 'darklayout',
 })
+
 </script>
 
 
 <template>
     <div class="container">
-        <div>LOGO</div>
+        <div class=" text-emerald-500">LOGO</div>
         <div>
-            <button v-if="loggedIn" @click="handleSignOut">Log Out</button>
-            <a v-else href="/login">Accedi</a>
+            <button v-if="loggedIn" @click="handleSignOut" class=" bg-emerald-500">Log Out</button>
+            <nuxt-link v-else class=" text-emerald-500" to="/login">Accedi</nuxt-link>
         </div>
+    </div>
+    <div>
+
     </div>
 </template>
 
